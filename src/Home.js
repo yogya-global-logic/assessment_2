@@ -4,6 +4,7 @@ function Home() {
     return (
       <div className='App'>
         {/* hello Home */}
+        <h1>Book store</h1>
         <div className = "justify-content-evenly m-4 p-2" style = {{display:"flex"}}>
         
         <Link className='btn btn-dark ' to='/login'>Login</Link>
