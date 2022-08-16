@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {Link,NavLink,Route,Routes} from 'react-router-dom';
+import Signup from './Validations/Signup';
+import Login from './Validations/Login';
+import Home from './Home';
+import DashBoard from './Components/DashBoard';
+import Shopping from './Components/Shopping';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* hello app */}
+      {/* <div className = "justify-content-evenly m-4 p-2" style = {{display:"flex"}}>
+      <Link className='btn btn-dark text-danger' to='/login'>Login</Link>
+      <Link className='btn btn-dark text-info' to='/signup'>Signup</Link>
+      
+      </div> */}
+      {/* <Signup></Signup> */}
+      <Routes>
+      <Route path="/" element={<Home></Home>}></Route>
+      <Route path = '/signup' element={<Signup></Signup>}></Route>
+      <Route path ='/login' element = {<Login></Login>}></Route>
+      <Route path ='/dashboard/' element = {<DashBoard></DashBoard>}></Route>
+      <Route path ='/dashboard/:name' element = {<DashBoard></DashBoard>}></Route>
+      <Route path ='/shopping' element = {<Shopping></Shopping>}></Route>
+      </Routes>
     </div>
   );
 }
